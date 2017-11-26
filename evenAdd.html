@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script>
+		window.onload = function() {
+			var oNum = document.getElementById('num');
+			var oResult = document.getElementById('result');
+			var oBtn = document.getElementById('btn');
+			oBtn.addEventListener('click', function() {
+				if (oNum.value.length > 0) {
+					oResult.value = a(parseInt(oNum.value));
+				}
+			}, false);
+		}
+		function a(n) {
+			if ( n < 0 ) {
+				return 0;
+			} else {
+				return n + arguments.callee(n - 1);
+			}
+		}
+	</script>
+</head>
+<body>
+	输入数字：<input type="text" id="num"><br>
+	输出结果<input type="text" id="result">
+	<button id="btn">计算</button>
+</body>
+</html>
